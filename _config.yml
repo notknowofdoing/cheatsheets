@@ -21,7 +21,7 @@
 title: "!k(d) Cheatsheets"
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  "!k(d) is trying to make some cheatsheets"
+  "just tryna make some cheatsheets"
 
 baseurl: "/cheatsheets" # the subpath of your site, e.g. /blog
 url: "https://notknowofdoing.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
