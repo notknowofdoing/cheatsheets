@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: "!k(d) Cheatsheet for Linux"
+title: "!k(d) Cheatsheets"
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   "!k(d) is trying to make some cheatsheets"
