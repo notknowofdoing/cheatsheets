@@ -1,39 +1,25 @@
 # crude hackjob
 # refer for cleanup https://github.com/envygeeks/jekyll-docker/blob/master/README.md
 
-services:
-  devserver:
-    image: jekyll/jekyll
-    volumes:
-      - ./:/srv/jekyll
-      - gems:/usr/local/bundle
-    ports:
-      - "127.0.0.1:4000:4000"
-    stdin_open: true
-    tty: true
-
-    command: jekyll serve
-
-  install:
-    image: jekyll/jekyll
-    volumes:
-      - ./:/srv/jekyll
-      - gems:/usr/local/bundle
-    stdin_open: true
-    tty: true
-
-    command: bundle install
-
-  build:
-    image: jekyll/jekyll
-    volumes:
-      - ./:/srv/jekyll
-      - gems:/usr/local/bundle
-    stdin_open: true
-    tty: true
-
-    command: jekyll build
-
-
 volumes:
   gems:
+# ===
+x-base: &jekyll-base
+    image: jekyll/jekyll
+    volumes:
+      - ./:/srv/jekyll
+      - gems:/usr/gem
+# ===
+services:
+  dev:
+    <<: *jekyll-base
+    ports:
+      - "127.0.0.1:4000:4000"
+    command: jekyll serve
+
+  update:
+    <<: *jekyll-base
+    command: bundle update
+    profiles:
+      - update
+
